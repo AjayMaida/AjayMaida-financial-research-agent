@@ -26,4 +26,6 @@ EXPOSE 8000 8501
 RUN mkdir -p /app/data/chroma_db
 
 # Default command runs FastAPI
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+#CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+CMD ["streamlit", "run", "streamlit_app.py", "--server.port",  "8501", "--server.address", "0.0.0.0"]
