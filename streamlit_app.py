@@ -1,8 +1,9 @@
 import streamlit as st
 import requests
+import os
 
-# API_URL = "http://localhost:8000/research"
-API_URL = "https://financial-research-agent.onrender.com/research"
+# Use environment variable for API URL, with a fallback for local development
+API_URL = os.getenv("API_URL", "http://localhost:8000/research")
 
 st.set_page_config(
     page_title="Financial Research Agent",

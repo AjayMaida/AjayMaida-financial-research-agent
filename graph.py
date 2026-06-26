@@ -32,9 +32,11 @@ def build_graph():
 
     return workflow.compile()
 
+# Build the graph once and reuse it
+graph = build_graph()
+
 # Run the graph
 def run_agent(query: str) -> str:
-    graph = build_graph()
     initial_state = {
         "query": query,
         "plan": {},
